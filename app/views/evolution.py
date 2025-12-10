@@ -25,10 +25,18 @@ def render_evolution():
 
     with c2:
         models_for_pipe = sorted(list(set(r['model'] for r in available_runs if r['pipeline'] == selected_pipeline)))
-        selected_model = st.selectbox("Model", models_for_pipe)
+        
+        # Default to "ModZScore" if available
+        default_model_ix = models_for_pipe.index("ModZScore") if "ModZScore" in models_for_pipe else 0
+        
+        selected_model = st.selectbox("Model", models_for_pipe, index=default_model_ix)
     with c3:
         feats_for_model = sorted(list(set(r['feature'] for r in available_runs if r['pipeline'] == selected_pipeline and r['model'] == selected_model)))
-        selected_feature = st.selectbox("Feature Set", feats_for_model)
+        
+        # Default to "Speed" if available
+        default_feat_ix = feats_for_model.index("Speed") if "Speed" in feats_for_model else 0
+        
+        selected_feature = st.selectbox("Feature Set", feats_for_model, index=default_feat_ix)
 
     st.divider()
 
