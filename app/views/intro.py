@@ -8,13 +8,16 @@ def render_intro():
 
   st.markdown("""
               
-  Traffic anomalies, like incidents that cause congestions, incur various economic, environmental, and social costs.  
+  Traffic anomalies, such as incidents that cause congestions, incur various economic, environmental, and social costs. The European Court of Auditors estimates that inefficiencies
+               in urban mobility (and road congestion, in particular) cost the EU about **€110 billion per year**, 
+              including lost working time, wasted fuel, increased emissions, as well as other indirect impacts on logistics.  
+
   **Intelligent Transportation Systems (ITS)** aim to use sensing and data analytics to make transport networks safer, 
               more efficient, and more sustainable. An important part of many ITS deployments is the 
               **Automatic Incident Detection (AID)** system, which can use artificial intelligence to detect traffic anomalies in real-time 
               from data collected by traffic sensors.  
 
-  This BSc Thesis focuses on developing AI-based systems for detecting such anomalies. The study
+  This BSc Thesis focuses on developing AI-based systems that detect such anomalies. The study
   answers three main research questions:
     - How do different anomaly-detection model families (i.e., statistical, machine learning, and deep learning) compare for detecting traffic incidents that cause congestion?
     - How much does the detection performance depend on the feature set used as input: speed only, occupancy only, or a bivariate combination of both?
@@ -49,8 +52,8 @@ def render_intro():
   st.header("Dataset & Evaluation Protocol")
 
   st.markdown("""
-  The dataset used for this study is derived from the Caltrans Performance Measurement System (PeMS) dataset.   
-              **175** congestion-inducing traffic incidents were selected, where each incident is represented 
+  The dataset used for this study is derived from the Caltrans Performance Measurement System (PeMS) dataset. PeMS data is collected in real-time from nearly 40,000 individual detectors spanning the freeway system across all major metropolitan areas of California. 
+              In this experiment, **175** congestion-inducing traffic incidents were selected, where each incident is represented 
               by a time series stream that is **252** hours long with aggregated data in **5-minute** intervals.  
               The first **240** hours correspond to typical traffic 
               conditions, while the last **12** hours contain the incident.
